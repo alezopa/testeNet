@@ -12,26 +12,12 @@ namespace TesteNET.Models
             : base(options)
         {
         }
-
-        public virtual DbSet<Produto> Produtos { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
         public virtual DbSet<Pedidos> Pedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Produto>(entity =>
-            {
-                entity.HasKey(e => e.ProdutoId);
-
-                entity.Property(e => e.Imagem).HasMaxLength(250);
-
-                entity.Property(e => e.Nome)
-                    .IsRequired()
-                    .HasMaxLength(100);
-
-                entity.Property(e => e.Preco).HasColumnType("decimal(18, 2)");
-            });
 
             modelBuilder.Entity<Usuario>(entity =>
             {

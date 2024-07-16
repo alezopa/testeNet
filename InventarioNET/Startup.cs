@@ -30,7 +30,6 @@ namespace TesteNET
             });
 
             services.AddScoped<IUsuariosRepository, UsuariosRepository>();
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IPedidosRepository, PedidosRepository>();
 
             services.AddControllers();
